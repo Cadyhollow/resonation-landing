@@ -249,7 +249,7 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-content">
-      
+      <img src="logo.png" alt="ResoNation Reservation Systems" class="hero-logo" />
       <div class="hero-badge">🏕️ Built by a campground owner, for campground owners</div>
       <h1>Smart reservations.<br /><em>Seamless stays.</em></h1>
       <p>Powerful, affordable reservation software built specifically for campgrounds, RV parks, and outdoor destinations — by someone who's been in your shoes.</p>
@@ -482,7 +482,7 @@
       <div class="contact-form reveal">
         <div class="form-title">Let's talk about your park</div>
         <div class="form-sub">Fill out the form below and we'll reach out to schedule your free demo.</div>
-        <form id="contactForm" onsubmit="handleSubmit(event)">
+        <form id="contactForm" action="https://formspree.io/f/xpqbdewg" method="POST" onsubmit="handleSubmit(event)">
           <div class="form-row">
             <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Jane Smith" required /></div>
             <div class="form-group"><label>Campground Name</label><input type="text" name="campground" placeholder="Pine Ridge Camp" required /></div>
@@ -513,7 +513,7 @@
   <footer>
     <div class="footer-top">
       <div class="footer-logo">
-        
+        <img src="logo.png" alt="ResoNation Reservation Systems" />
       </div>
       <ul class="footer-links">
         <li><a href="#features">Features</a></li>
@@ -545,21 +545,32 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      const data = new FormData(e.target);
-      const subject = encodeURIComponent('ResoNation Demo Request — ' + data.get('campground'));
-      const body = encodeURIComponent(
-        'New demo request!\n\nName: ' + data.get('name') +
-        '\nCampground: ' + data.get('campground') +
-        '\nEmail: ' + data.get('email') +
-        '\nPhone: ' + (data.get('phone') || 'Not provided') +
-        '\nPark size: ' + (data.get('sites') || 'Not specified') +
-        '\n\nMessage:\n' + (data.get('message') || 'No message.')
-      );
-      window.location.href = 'mailto:resonationsystems@gmail.com?subject=' + subject + '&body=' + body;
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+      const form = e.target;
+      const data = new FormData(form);
+      const btn = form.querySelector('.btn-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const response = await fetch('https://formspree.io/f/xpqbdewg', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          document.getElementById('contactForm').style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          btn.textContent = 'Send Message & Request Demo →';
+          btn.disabled = false;
+          alert('Something went wrong. Please email us at resonationsystems@gmail.com');
+        }
+      } catch (err) {
+        btn.textContent = 'Send Message & Request Demo →';
+        btn.disabled = false;
+        alert('Something went wrong. Please email us at resonationsystems@gmail.com');
+      }
     }
   </script>
 </body>

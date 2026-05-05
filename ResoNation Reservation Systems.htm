@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///Users/charissachiaravalloti/Downloads/index_8.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResoNation Reservation Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./ResoNation Reservation Systems_files/css2" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:   #143225;
+      --green-mid:    #43614D;
+      --green-sage:   #6E836F;
+      --green-light:  #E6E7E2;
+      --warm-grey:    #C7CDBF;
+      --cool-grey:    #C9D2D9;
+      --gold:         #C4963A;
+      --cream:        #F7F5F0;
+      --white:        #ffffff;
+      --text-dark:    #1a2a1e;
+      --text-mid:     #3d5244;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 80px;
+      background: rgba(20,50,37,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+    }
+
+    .nav-logo-text {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo-text span { color: var(--gold); }
+
+    .nav-sub {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--warm-grey);
+      text-transform: uppercase;
+      display: block;
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .btn-nav {
+      background: var(--gold);
+      color: var(--white) !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+
+    .btn-nav:hover {
+      background: #d4a84a !important;
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--green-dark);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 5% 80px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(67,97,77,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(196,150,58,0.12) 0%, transparent 60%);
+    }
+
+    /* Pine tree silhouette decorations */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 45%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 700' preserveAspectRatio='xMaxYMax meet'%3E%3Cg opacity='0.08' fill='%23ffffff'%3E%3Cpolygon points='120,600 170,400 130,400 190,220 150,220 220,50 290,220 250,220 310,400 270,400 320,600'/%3E%3Cpolygon points='350,600 410,370 365,370 440,160 515,370 470,370 530,600'/%3E%3Cpolygon points='30,600 80,420 50,420 100,280 60,280 110,140 160,280 120,280 170,420 140,420 190,600'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(196,150,58,0.15);
+      border: 1px solid rgba(196,150,58,0.4);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 540px;
+      font-weight: 400;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(196,150,58,0.35);
+    }
+
+    .btn-primary:hover {
+      background: #d4a84a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(196,150,58,0.45);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid rgba(255,255,255,0.35);
+      border-bottom: 2px solid rgba(255,255,255,0.35);
+      transform: rotate(45deg);
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--green-mid);
+      padding: 18px 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 28px;
+    }
+
+    .trust-item + .trust-item {
+      border-left: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .trust-icon { font-size: 1rem; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 5%; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-sage);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 580px;
+    }
+
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin: 0 auto; }
+
+    /* ── WHY SECTION ── */
+    .why {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 5%;
+    }
+
+    .why-visual {
+      background: var(--green-dark);
+      border-radius: 20px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-visual::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(196,150,58,0.12);
+    }
+
+    .why-stat {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 32px;
+    }
+
+    .why-stat:last-child { margin-bottom: 0; }
+
+    .why-stat-num {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .why-stat-label {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .why-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 28px 0;
+    }
+
+    .why-text .section-title { margin-bottom: 24px; }
+
+    .why-text p {
+      color: var(--text-mid);
+      line-height: 1.75;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    /* ── FEATURES ── */
+    .features-section {
+      background: white;
+      padding: 100px 5%;
+    }
+
+    .features-header {
+      max-width: 1200px;
+      margin: 0 auto 64px;
+    }
+
+    .features-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 36px 32px;
+      border: 1px solid rgba(110,131,111,0.15);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green-mid), var(--green-sage));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(20,50,37,0.1);
+      border-color: rgba(110,131,111,0.35);
+    }
+
+    .feature-card:hover::before { opacity: 1; }
+
+    .feature-card.highlight {
+      background: var(--green-dark);
+    }
+
+    .feature-card.highlight .feature-title,
+    .feature-card.highlight .feature-desc { color: rgba(255,255,255,0.9); }
+
+    .feature-card.highlight .feature-desc { color: rgba(255,255,255,0.6); }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(67,97,77,0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-card.highlight .feature-icon {
+      background: rgba(196,150,58,0.2);
+    }
+
+    .feature-badge {
+      display: inline-block;
+      background: rgba(196,150,58,0.15);
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(196,150,58,0.3);
+    }
+
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* ── DEMO BANNER ── */
+    .demo-banner {
+      background: linear-gradient(135deg, var(--green-mid) 0%, var(--green-dark) 100%);
+      padding: 64px 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .demo-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(196,150,58,0.1) 0%, transparent 70%);
+    }
+
+    .demo-banner-content { position: relative; z-index: 1; }
+
+    .demo-banner h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .demo-banner p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      margin-bottom: 28px;
+    }
+
+    /* ── PRICING ── */
+    .pricing-section {
+      background: var(--cream);
+      padding: 100px 5%;
+    }
+
+    .pricing-header {
+      max-width: 1200px;
+      margin: 0 auto 64px;
+    }
+
+    .pricing-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 36px;
+      border: 1px solid rgba(110,131,111,0.15);
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(20,50,37,0.1);
+    }
+
+    .pricing-card.featured {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      transform: scale(1.04);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.04) translateY(-4px);
+    }
+
+    .pricing-popular {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 18px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .pricing-tier-icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .pricing-tier-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green-sage);
+      margin-bottom: 4px;
+    }
+
+    .pricing-card.featured .pricing-tier-name { color: rgba(255,255,255,0.6); }
+
+    .pricing-tier-label {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card.featured .pricing-tier-label { color: var(--white); }
+
+    .pricing-price {
+      margin-bottom: 6px;
+    }
+
+    .pricing-from {
+      font-size: 0.8rem;
+      color: var(--green-sage);
+      font-weight: 500;
+    }
+
+    .pricing-card.featured .pricing-from { color: rgba(255,255,255,0.5); }
+
+    .pricing-amount {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .pricing-card.featured .pricing-amount { color: var(--gold); }
+
+    .pricing-mo {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--green-sage);
+    }
+
+    .pricing-card.featured .pricing-mo { color: rgba(255,255,255,0.5); }
+
+    .pricing-note {
+      font-size: 0.78rem;
+      color: var(--green-sage);
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .pricing-card.featured .pricing-note { color: rgba(255,255,255,0.4); }
+
+    .pricing-divider {
+      border: none;
+      border-top: 1px solid rgba(110,131,111,0.15);
+      margin: 24px 0;
+    }
+
+    .pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,0.1); }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      padding: 6px 0;
+      line-height: 1.4;
+    }
+
+    .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.75); }
+
+    .check {
+      color: var(--green-sage);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pricing-card.featured .check { color: var(--gold); }
+
+    .btn-pricing {
+      display: block;
+      text-align: center;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-pricing-outline {
+      border: 2px solid var(--green-mid);
+      color: var(--green-dark);
+    }
+
+    .btn-pricing-outline:hover {
+      background: var(--green-dark);
+      color: white;
+      border-color: var(--green-dark);
+    }
+
+    .btn-pricing-gold {
+      background: var(--gold);
+      color: white;
+      box-shadow: 0 4px 16px rgba(196,150,58,0.35);
+    }
+
+    .btn-pricing-gold:hover {
+      background: #d4a84a;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(196,150,58,0.45);
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      background: white;
+      padding: 100px 5%;
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-quote {
+      background: var(--green-dark);
+      border-radius: 20px;
+      padding: 48px 44px;
+      position: relative;
+    }
+
+    .quote-mark {
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      margin-bottom: 16px;
+      display: block;
+      opacity: 0.7;
+    }
+
+    .quote-text {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.75;
+      font-weight: 400;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .quote-attr {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .quote-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .quote-name {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.9rem;
+    }
+
+    .quote-title {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      margin-top: 2px;
+    }
+
+    .about-text .section-title { margin-bottom: 24px; }
+
+    .about-text p {
+      color: var(--text-mid);
+      line-height: 1.75;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--green-dark);
+      padding: 100px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 80% 50%, rgba(67,97,77,0.4) 0%, transparent 70%);
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-left .section-label { color: var(--gold); }
+
+    .contact-left .section-title { color: var(--white); }
+
+    .contact-left .section-sub {
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 36px;
+    }
+
+    .contact-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contact-option:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+    .contact-opt-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(196,150,58,0.15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-opt-title {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .contact-opt-desc {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    .form-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .form-sub {
+      color: var(--text-mid);
+      font-size: 0.875rem;
+      margin-bottom: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid rgba(110,131,111,0.25);
+      border-radius: 8px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background: var(--cream);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--green-mid);
+      box-shadow: 0 0 0 3px rgba(67,97,77,0.1);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--green-dark);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover {
+      background: var(--green-mid);
+      transform: translateY(-1px);
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      color: var(--green-mid);
+      font-weight: 600;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d2119;
+      padding: 48px 5% 32px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .footer-logo-text span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-top: 2px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.78rem;
+    }
+
+    .footer-pillars {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-pillar {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .why { grid-template-columns: 1fr; gap: 48px; }
+      .about-inner { grid-template-columns: 1fr; gap: 48px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; }
+      .pricing-card.featured { transform: scale(1); }
+      .pricing-card.featured:hover { transform: translateY(-4px); }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .trust-item + .trust-item { border-left: none; border-top: 1px solid rgba(255,255,255,0.2); }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.4rem; }
+      .hero-btns { flex-direction: column; }
+      .footer-top { flex-direction: column; align-items: flex-start; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="file:///Users/charissachiaravalloti/Downloads/index_8.html#" class="nav-logo">
+      <img src="file:///Users/charissachiaravalloti/Downloads/logo.png" alt="ResoNation Reservation Systems">
+    </a>
+    <ul class="nav-links">
+      <li><a href="file:///Users/charissachiaravalloti/Downloads/index_8.html#features">Features</a></li>
+      <li><a href="file:///Users/charissachiaravalloti/Downloads/index_8.html#pricing">Pricing</a></li>
+      <li><a href="file:///Users/charissachiaravalloti/Downloads/index_8.html#about">About</a></li>
+      <li><a href="file:///Users/charissachiaravalloti/Downloads/index_8.html#contact" class="btn-nav">Book a Demo</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">🏕️ Built by a campground owner, for campground owners</div>
+      <h1>Smart reservations.<br><em>Seamless stays.</em></h1>
+      <p>Powerful, affordable reservation software built specifically for campgrounds, RV parks, and outdoor destinations — by someone who's been in your shoes.</p>
+      <div class="hero-btns">
+        <a href="file:///Users/charissachiaravalloti/Downloads/index_8.html#contact" class="btn-primary">Book a Free Demo</a>
+        <a href="https://lakeshore-camp-reservations.vercel.app/" target="_blank" class="btn-secondary">See It Live →</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item"><span class="trust-icon">🏕️</span> Built for Campgrounds</div>
+    <div class="trust-item"><span class="trust-icon">💻</span> Powered by Technology</div>
+    <div class="trust-item"><span class="trust-icon">⭐</span> Focused on Experiences</div>
+    <div class="trust-item"><span class="trust-icon">🤝</span> Driven by Relationships</div>
+  </div>
+
+  <!-- WHY SECTION -->
+  <div style="background: var(--cream); padding: 100px 5%;">
+    <div class="why" style="padding: 0;">
+      <div class="why-visual reveal">
+        <div class="why-stat">
+          <div class="why-stat-num">100%</div>
+          <div class="why-stat-label">Online booking, 24/7 — no phone tag required</div>
+        </div>
+        <hr class="why-divider">
+        <div class="why-stat">
+          <div class="why-stat-num">$0</div>
+          <div class="why-stat-label">Per-booking fees — just one flat monthly rate</div>
+        </div>
+        <hr class="why-divider">
+        <div class="why-stat">
+          <div class="why-stat-num">∞</div>
+          <div class="why-stat-label">Customization — built around how your park works</div>
+        </div>
+      </div>
+      <div class="why-text reveal">
+        <div class="section-label">Why ResoNation</div>
+        <h2 class="section-title">Finally, a reservation system that gets it.</h2>
+        <p>Most reservation platforms are built for hotels. ResoNation was built for the way campgrounds actually work — seasonal sites, nightly rates, cabin rentals, phone-in bookings, and guests who want to pick their own spot.</p>
+        <p>We know because we built it for our own campground first. Everything you see started as a real solution to a real problem. Now we're making it available to parks like yours — without the bloated price tag.</p>
+        <p>No long-term contracts. No per-booking commissions. Just a clean, modern system your guests will love and your staff can actually use.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="features-header text-center reveal">
+      <div class="section-label">Features</div>
+      <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">📅</div>
+        <div class="feature-title">Online Booking</div>
+        <p class="feature-desc">Guests search availability, pick their dates, and book in minutes — from any device, including iPhone and Android.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">💳</div>
+        <div class="feature-title">Integrated Payments</div>
+        <p class="feature-desc">Secure payment processing powered by Square. Funds go directly to your account — no middleman, no delays.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📋</div>
+        <div class="feature-title">Admin Dashboard</div>
+        <p class="feature-desc">Manual booking for phone reservations, an admin calendar, site management, and full settings — all in one place.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📧</div>
+        <div class="feature-title">Automated Emails</div>
+        <p class="feature-desc">Instant confirmation emails for guests and instant notifications for you — the moment a booking is made.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">✍️</div>
+        <div class="feature-title">Digital Liability Waiver</div>
+        <p class="feature-desc">Guests sign your waiver right at checkout. No paper, no chasing people down at check-in.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title">Mobile-Ready</div>
+        <p class="feature-desc">Your booking page looks and works beautifully on every screen — desktop, tablet, iPhone, and Android.</p>
+      </div>
+      <div class="feature-card highlight reveal">
+        <div class="feature-badge">Ridgeline &amp; Summit</div>
+        <div class="feature-icon">🗺️</div>
+        <div class="feature-title">Interactive Site Map</div>
+        <p class="feature-desc">Let guests click the exact site they want. A color-coded, real-time availability map that guests absolutely love.</p>
+      </div>
+      <div class="feature-card highlight reveal">
+        <div class="feature-badge">Ridgeline &amp; Summit</div>
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Reporting &amp; Analytics</div>
+        <p class="feature-desc">Occupancy trends, revenue snapshots, and booking data at a glance — so you can run your park smarter.</p>
+      </div>
+      <div class="feature-card highlight reveal">
+        <div class="feature-badge">Summit — Coming Soon</div>
+        <div class="feature-icon">🤖</div>
+        <div class="feature-title">AI-Powered Features</div>
+        <p class="feature-desc">Intelligent tools to help you communicate better, fill sites faster, and run a more efficient operation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO BANNER -->
+  <div class="demo-banner">
+    <div class="demo-banner-content reveal">
+      <h2>Want to see it in action?</h2>
+      <p>Click through a live ResoNation booking site — exactly what your guests would experience.</p>
+      <a href="https://lakeshore-camp-reservations.vercel.app/" target="_blank" class="btn-primary">View Live Demo →</a>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="pricing-header text-center reveal">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Simple pricing that grows<br>with your park.</h2>
+      <p class="section-sub">Every plan includes a full-featured system. Upgrade when you're ready for more. Pricing is based on park size — contact us for your personalized quote.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- Trailhead -->
+      <div class="pricing-card reveal">
+        <div class="pricing-tier-icon">🥾</div>
+        <div class="pricing-tier-name">Tier 1</div>
+        <div class="pricing-tier-label">Trailhead</div>
+        <div class="pricing-price">
+          <div class="pricing-from">Starting at</div>
+          <span class="pricing-amount">$59</span><span class="pricing-mo">/mo</span>
+        </div>
+        <div class="pricing-note">Pricing varies by park size</div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Online booking &amp; availability calendar</li>
+          <li><span class="check">✓</span> Square payment processing</li>
+          <li><span class="check">✓</span> Guest confirmation emails</li>
+          <li><span class="check">✓</span> Staff notification emails</li>
+          <li><span class="check">✓</span> Manual booking for phone reservations</li>
+          <li><span class="check">✓</span> Digital liability waiver</li>
+          <li><span class="check">✓</span> Admin dashboard &amp; settings</li>
+          <li><span class="check">✓</span> Mobile-friendly on all devices</li>
+        </ul>
+        <a href="mailto:resonationsystems@gmail.com?subject=ResoNation%20Trailhead%20Inquiry" class="btn-pricing btn-pricing-outline">Get Started</a>
+      </div>
+
+      <!-- Ridgeline -->
+      <div class="pricing-card featured reveal">
+        <div class="pricing-popular">Most Popular</div>
+        <div class="pricing-tier-icon">🏔️</div>
+        <div class="pricing-tier-name">Tier 2</div>
+        <div class="pricing-tier-label">Ridgeline</div>
+        <div class="pricing-price">
+          <div class="pricing-from">Starting at</div>
+          <span class="pricing-amount">$89</span><span class="pricing-mo">/mo</span>
+        </div>
+        <div class="pricing-note">Pricing varies by park size</div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Everything in Trailhead</li>
+          <li><span class="check">✓</span> Interactive clickable site map</li>
+          <li><span class="check">✓</span> Color-coded real-time availability</li>
+          <li><span class="check">✓</span> Guests self-select their site</li>
+          <li><span class="check">✓</span> Reporting &amp; analytics dashboard</li>
+        </ul>
+        <a href="mailto:resonationsystems@gmail.com?subject=ResoNation%20Ridgeline%20Inquiry" class="btn-pricing btn-pricing-gold">Get Started</a>
+      </div>
+
+      <!-- Summit -->
+      <div class="pricing-card reveal">
+        <div class="pricing-tier-icon">⛰️</div>
+        <div class="pricing-tier-name">Tier 3</div>
+        <div class="pricing-tier-label">Summit</div>
+        <div class="pricing-price">
+          <div class="pricing-from">Starting at</div>
+          <span class="pricing-amount">$129</span><span class="pricing-mo">/mo</span>
+        </div>
+        <div class="pricing-note">Pricing varies by park size</div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Everything in Ridgeline</li>
+          <li><span class="check">✓</span> Custom branded email templates</li>
+          <li><span class="check">✓</span> AI-powered features <em style="font-size:0.78rem;color:var(--green-sage)">(coming soon)</em></li>
+          <li><span class="check">✓</span> Priority support</li>
+        </ul>
+        <a href="mailto:resonationsystems@gmail.com?subject=ResoNation%20Summit%20Inquiry" class="btn-pricing btn-pricing-outline">Get Started</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-quote reveal">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">I couldn't find a reservation system that was affordable, flexible, and actually designed for the way a small campground operates. So I built one — and it changed everything for my park.</p>
+        <div class="quote-attr">
+          <div class="quote-avatar">🏕️</div>
+          <div>
+            <div class="quote-name">Charissa</div>
+            <div class="quote-title">Founder, ResoNation · Owner, Cady Hollow Campground</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Built by a campground owner.<br>For campground owners.</h2>
+        <p>ResoNation was born out of necessity. As the owner of Cady Hollow Campground in Port Allegany, PA, I couldn't find a reservation system that was affordable, flexible, and actually built for the way a small campground operates.</p>
+        <p>So I built one from the ground up — designed around real campground workflows: seasonal sites, nightly and weekly rates, cabin rentals, phone bookings, and guests who want to choose their own spot.</p>
+        <p>After deploying it at my own park and seeing how much smoother everything became, I knew other campground owners deserved the same thing. ResoNation is that system — tested in the real world, refined through a real season, and ready for your park.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title" style="color:white;">Ready to see it<br>in action?</h2>
+        <p class="section-sub">Book a free demo and we'll walk you through the system live. Or send us a message and we'll get back to you within one business day.</p>
+        <div style="margin-top:36px;">
+          <div class="contact-option">
+            <div class="contact-opt-icon">📞</div>
+            <div>
+              <div class="contact-opt-title">Book a Demo Call</div>
+              <div class="contact-opt-desc">See ResoNation running live on a real campground. We'll answer your questions and find the right plan for your park.</div>
+            </div>
+          </div>
+          <div class="contact-option">
+            <div class="contact-opt-icon">✉️</div>
+            <div>
+              <div class="contact-opt-title">Send a Message</div>
+              <div class="contact-opt-desc">Not ready for a call? Fill out the form and we'll be in touch within one business day.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-title">Let's talk about your park</div>
+        <div class="form-sub">Fill out the form below and we'll reach out to schedule your free demo.</div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="Jane Smith" required="">
+            </div>
+            <div class="form-group">
+              <label>Campground Name</label>
+              <input type="text" name="campground" placeholder="Pine Ridge Camp" required="">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="jane@yourcamp.com" required="">
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" name="phone" placeholder="(555) 000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>How many sites does your park have?</label>
+            <select name="sites">
+              <option value="">Select a range...</option>
+              <option>Under 25 sites</option>
+              <option>25–75 sites</option>
+              <option>75–150 sites</option>
+              <option>150+ sites</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message (optional)</label>
+            <textarea name="message" placeholder="Tell us a little about your park and what you&#39;re looking for..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message &amp; Request Demo →</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          ✅ Thanks! We'll be in touch within one business day.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+        <img src="file:///Users/charissachiaravalloti/Downloads/logo.png" alt="ResoNation" style="height:52px;width:auto;">
+      <ul class="footer-links">
+        <li><a href="file:///Users/charissachiaravalloti/Downloads/index_8.html#features">Features</a></li>
+        <li><a href="file:///Users/charissachiaravalloti/Downloads/index_8.html#pricing">Pricing</a></li>
+        <li><a href="file:///Users/charissachiaravalloti/Downloads/index_8.html#about">About</a></li>
+        <li><a href="mailto:resonationsystems@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 ResoNation Reservation Systems. All rights reserved.</div>
+      <div class="footer-pillars">
+        <span class="footer-pillar">🏕️ Built for Campgrounds</span>
+        <span class="footer-pillar">💻 Powered by Technology</span>
+        <span class="footer-pillar">⭐ Focused on Experiences</span>
+        <span class="footer-pillar">🤝 Driven by Relationships</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Form submit — opens mailto
+    function handleSubmit(e) {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const name = data.get('name');
+      const campground = data.get('campground');
+      const email = data.get('email');
+      const phone = data.get('phone') || 'Not provided';
+      const sites = data.get('sites') || 'Not specified';
+      const message = data.get('message') || 'No additional message.';
+
+      const subject = encodeURIComponent(`ResoNation Demo Request — ${campground}`);
+      const body = encodeURIComponent(
+        `New demo request from the ResoNation website!\n\n` +
+        `Name: ${name}\n` +
+        `Campground: ${campground}\n` +
+        `Email: ${email}\n` +
+        `Phone: ${phone}\n` +
+        `Park size: ${sites}\n\n` +
+        `Message:\n${message}`
+      );
+
+      window.location.href = `mailto:resonationsystems@gmail.com?subject=${subject}&body=${body}`;
+
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  </script>
+
+
+</body></html>

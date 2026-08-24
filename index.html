@@ -45,6 +45,10 @@
     .nav-links a:hover { color: var(--white); }
     .btn-nav { background: var(--gold); color: var(--white) !important; padding: 8px 20px; border-radius: 6px; font-weight: 700 !important; }
     .btn-nav:hover { background: #d4a84a !important; }
+    /* Existing-client link. Dimmer than the marketing nav items on purpose — it is for the few
+       people who already pay us, and must not pull attention from "Book a Demo". */
+    .nav-client { color: rgba(255,255,255,0.5) !important; }
+    .nav-client:hover { color: rgba(255,255,255,0.9) !important; }
 
     /* HERO */
     .hero {
@@ -210,9 +214,16 @@
     footer { background: #0d2119; padding: 48px 5% 32px; }
     .footer-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 24px; flex-wrap: wrap; gap: 20px; }
     .footer-logo img { height: 48px; width: auto; }
-    .footer-links { display: flex; gap: 28px; list-style: none; }
+    /* Wraps because of the client link below: this row was comfortably under a phone's width
+       with four short items, and the fifth is a whole sentence. Without wrapping, the row would
+       run off the side and take the entire page's horizontal scroll with it. */
+    .footer-links { display: flex; flex-wrap: wrap; gap: 28px; list-style: none; }
     .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
     .footer-links a:hover { color: rgba(255,255,255,0.85); }
+    /* Slightly brighter than its neighbours: it is the longest label in the row and the one an
+       existing client is actually hunting for, so it should be findable without being loud. */
+    .footer-client { color: rgba(255,255,255,0.65) !important; white-space: nowrap; }
+    .footer-client:hover { color: var(--gold) !important; }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     .footer-copy { color: rgba(255,255,255,0.3); font-size: 0.78rem; }
     .footer-pillars { display: flex; gap: 20px; flex-wrap: wrap; }
@@ -252,6 +263,11 @@
       <li><a href="#features">Features</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">About</a></li>
+      <!-- Existing clients, not prospects. A quiet text link kept to the LEFT of the gold
+           "Book a Demo" button so it never competes with the page's actual call to action.
+           Also repeated in the footer, because .nav-links is hidden below 900px and this
+           would otherwise be invisible to a client on a phone. -->
+      <li><a href="https://billing.stripe.com/p/login/3cI4gzff26Ud7Z4eQ52go00" class="nav-client" target="_blank" rel="noopener noreferrer">Manage account</a></li>
       <li><a href="#contact" class="btn-nav">Book a Demo</a></li>
     </ul>
   </nav>
@@ -614,6 +630,9 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="mailto:resonationsystems@gmail.com">Contact</a></li>
+        <!-- The dependable half of the pair: the footer is present at every screen size, so this
+             is what an existing client on a phone actually finds. -->
+        <li><a href="https://billing.stripe.com/p/login/3cI4gzff26Ud7Z4eQ52go00" class="footer-client" target="_blank" rel="noopener noreferrer">Already a client? Manage your account&nbsp;&rarr;</a></li>
       </ul>
     </div>
     <div class="footer-bottom">

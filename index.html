@@ -127,9 +127,13 @@
     .feature-group-header:first-of-type { margin-top: 0; }
     .feature-group-label { font-size: 0.95rem; font-weight: 800; color: var(--green-dark); letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
     .feature-group-sub { font-size: 0.88rem; color: var(--green-sage); font-style: italic; }
-    .pricing-pos-line { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 700; color: var(--gold); background: rgba(196,150,58,0.12); border: 1px solid rgba(196,150,58,0.4); border-radius: 100px; padding: 7px 16px; margin-bottom: 20px; }
-    .pricing-card.featured .pricing-pos-line { color: #E7B85C; background: rgba(196,150,58,0.2); border-color: rgba(196,150,58,0.6); }
-    .badge-pos { display: inline-block; background: var(--gold); color: var(--white); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 11px; border-radius: 100px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(196,150,58,0.4); }
+    .pricing-store-line { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 700; color: var(--gold); background: rgba(196,150,58,0.12); border: 1px solid rgba(196,150,58,0.4); border-radius: 100px; padding: 7px 16px; margin-bottom: 20px; }
+    .pricing-card.featured .pricing-store-line { color: #E7B85C; background: rgba(196,150,58,0.2); border-color: rgba(196,150,58,0.6); }
+    .store-check { margin-right: 7px; }
+    /* Summit bundles the Camp Store, so its line is a perk rather than an upsell: green and
+       affirmative instead of the gold add-on pill the other two tiers carry. */
+    .pricing-store-line.included { color: var(--green-dark); background: rgba(67,97,77,0.10); border-color: rgba(67,97,77,0.35); }
+    .badge-addon { display: inline-block; background: var(--gold); color: var(--white); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 11px; border-radius: 100px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(196,150,58,0.4); }
 
     /* DEMO BANNER */
     .demo-banner { background: linear-gradient(135deg, var(--green-mid) 0%, var(--green-dark) 100%); padding: 64px 5%; text-align: center; }
@@ -150,14 +154,10 @@
     .pricing-card.featured .pricing-tier-name { color: rgba(255,255,255,0.6); }
     .pricing-tier-label { font-size: 1.4rem; font-weight: 800; color: var(--green-dark); letter-spacing: -0.02em; margin-bottom: 20px; }
     .pricing-card.featured .pricing-tier-label { color: var(--white); }
-    .pricing-from { font-size: 0.8rem; color: var(--green-sage); font-weight: 500; }
-    .pricing-card.featured .pricing-from { color: rgba(255,255,255,0.5); }
     .pricing-amount { font-size: 2.8rem; font-weight: 800; color: var(--green-dark); letter-spacing: -0.04em; line-height: 1; }
     .pricing-card.featured .pricing-amount { color: var(--gold); }
     .pricing-mo { font-size: 1rem; font-weight: 500; color: var(--green-sage); }
     .pricing-card.featured .pricing-mo { color: rgba(255,255,255,0.5); }
-    .pricing-note { font-size: 0.78rem; color: var(--green-sage); margin-bottom: 28px; font-style: italic; }
-    .pricing-card.featured .pricing-note { color: rgba(255,255,255,0.4); }
     .pricing-divider { border: none; border-top: 1px solid rgba(110,131,111,0.15); margin: 24px 0; }
     .pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,0.1); }
     .pricing-features { list-style: none; margin-bottom: 32px; }
@@ -395,9 +395,9 @@
         <p class="feature-desc">Secure processing powered by Square. Funds go straight to your account — no middleman, no per-booking fees.</p>
       </div>
       <div class="feature-card highlight reveal">
-        <span class="badge-pos">+ Add-on</span>
+        <span class="badge-addon">+ Add-on</span>
         <div class="feature-icon">🛒</div>
-        <div class="feature-title">Point of Sale &amp; Camp Store</div>
+        <div class="feature-title">Camp Store</div>
         <p class="feature-desc">Ring up firewood, ice, and merch at the counter with Square Terminal and in-person card payments.</p>
       </div>
       <div class="feature-card reveal">
@@ -467,16 +467,14 @@
     <div class="pricing-header text-center reveal">
       <div class="section-label">Pricing</div>
       <h2 class="section-title">Simple pricing that grows<br />with your park.</h2>
-      <p class="section-sub">Every plan includes a full-featured system. Upgrade when you're ready for more. Pricing is based on park size — contact us for your personalized quote.</p>
+      <p class="section-sub">Every plan includes a full-featured system, at one flat monthly price. Upgrade when you're ready for more.</p>
     </div>
     <div class="pricing-grid">
       <div class="pricing-card reveal">
         <div class="pricing-tier-icon">🥾</div>
         <div class="pricing-tier-name">Tier 1</div>
         <div class="pricing-tier-label">Trailhead</div>
-        <div class="pricing-from">Starting at</div>
         <div><span class="pricing-amount">$99</span><span class="pricing-mo">/mo</span></div>
-        <div class="pricing-note">Pricing varies by park size</div>
         <hr class="pricing-divider" />
         <ul class="pricing-features">
           <li><span class="check">✓</span> Online booking & availability calendar</li>
@@ -492,7 +490,7 @@
           <li><span class="check">✓</span> Discount codes</li>
           <li><span class="check">✓</span> Configurable cancellation policies</li>
         </ul>
-        <div class="pricing-pos-line">+ Point of Sale available as an add-on</div>
+        <div class="pricing-store-line">+ Camp Store available as an add-on (+$49/mo)</div>
         <a href="#contact" class="btn-pricing btn-pricing-outline">Get Started</a>
       </div>
       <div class="pricing-card featured reveal">
@@ -500,9 +498,7 @@
         <div class="pricing-tier-icon">🏔️</div>
         <div class="pricing-tier-name">Tier 2</div>
         <div class="pricing-tier-label">Ridgeline</div>
-        <div class="pricing-from">Starting at</div>
-        <div><span class="pricing-amount">$149</span><span class="pricing-mo">/mo</span></div>
-        <div class="pricing-note">Pricing varies by park size</div>
+        <div><span class="pricing-amount">$229</span><span class="pricing-mo">/mo</span></div>
         <hr class="pricing-divider" />
         <ul class="pricing-features">
           <li><span class="check">✓</span> Everything in Trailhead</li>
@@ -514,16 +510,14 @@
           <li><span class="check">✓</span> Live admin park map (staff site-status board)</li>
           <li><span class="check">✓</span> Early check-in &amp; late check-out upsells</li>
         </ul>
-        <div class="pricing-pos-line">+ Point of Sale available as an add-on</div>
+        <div class="pricing-store-line">+ Camp Store available as an add-on (+$49/mo)</div>
         <a href="#contact" class="btn-pricing btn-pricing-outline">Get Started</a>
       </div>
       <div class="pricing-card reveal">
         <div class="pricing-tier-icon">⛰️</div>
         <div class="pricing-tier-name">Tier 3</div>
         <div class="pricing-tier-label">Summit</div>
-        <div class="pricing-from">Starting at</div>
-        <div><span class="pricing-amount">$199</span><span class="pricing-mo">/mo</span></div>
-        <div class="pricing-note">Pricing varies by park size</div>
+        <div><span class="pricing-amount">$449</span><span class="pricing-mo">/mo</span></div>
         <hr class="pricing-divider" />
         <ul class="pricing-features">
           <li><span class="check">✓</span> Everything in Ridgeline</li>
@@ -535,7 +529,7 @@
           <li><span class="check">✓</span> Electric meter billing (kWh statements)</li>
           <li><span class="check">✓</span> Credit balance tracking</li>
         </ul>
-        <div class="pricing-pos-line">+ Point of Sale available as an add-on</div>
+        <div class="pricing-store-line included"><span class="store-check">✓</span>Camp Store included</div>
         <a href="#contact" class="btn-pricing btn-pricing-outline">Get Started</a>
       </div>
     </div>

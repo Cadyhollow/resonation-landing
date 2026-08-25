@@ -1,0 +1,7 @@
+# The Learning Center design source, kept OUT of the repo on purpose.
+#
+# Every file committed here is served publicly by Vercel, so committing this one
+# would publish the whole Learning Center — and its old client-side access code —
+# at https://myresonation.com/resonation-learning-center.html, wide open, beside
+# the gated copy at /learn. The live page is built from api/_learn-page.js.
+resonation-learning-center.html

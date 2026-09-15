@@ -145,9 +145,13 @@
     .pricing-store-line { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 700; color: var(--gold); background: rgba(196,150,58,0.12); border: 1px solid rgba(196,150,58,0.4); border-radius: 100px; padding: 7px 16px; margin-bottom: 20px; }
     .pricing-card.featured .pricing-store-line { color: #E7B85C; background: rgba(196,150,58,0.2); border-color: rgba(196,150,58,0.6); }
     .store-check { margin-right: 7px; }
-    /* Summit bundles the Camp Store, so its line is a perk rather than an upsell: green and
-       affirmative instead of the gold add-on pill the other two tiers carry. */
+    /* Ridgeline and Summit bundle the Camp Store, so their line is a perk rather than an upsell:
+       green and affirmative instead of the gold add-on pill Trailhead carries. The featured card is
+       dark green, so its included line needs the light variant below — the same markup, recoloured
+       the way every other element on that card is. Without it the rule above loses to
+       .pricing-card.featured .pricing-store-line and the line would render gold. */
     .pricing-store-line.included { color: var(--green-dark); background: rgba(67,97,77,0.10); border-color: rgba(67,97,77,0.35); }
+    .pricing-card.featured .pricing-store-line.included { color: #CFE3D3; background: rgba(207,227,211,0.12); border-color: rgba(207,227,211,0.45); }
     .badge-addon { display: inline-block; background: var(--gold); color: var(--white); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 11px; border-radius: 100px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(196,150,58,0.4); }
 
     /* DEMO BANNER */
@@ -578,10 +582,10 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <p class="feature-desc">Secure processing powered by Square. Funds go straight to your account — no middleman, no per-booking fees.</p>
       </div>
       <div class="feature-card highlight reveal">
-        <span class="badge-addon">+ Add-on</span>
+        <div class="feature-badge">Ridgeline &amp; Summit</div>
         <div class="feature-icon">🛒</div>
         <div class="feature-title">Camp Store</div>
-        <p class="feature-desc">Ring up firewood, ice, and merch at the counter with Square Terminal and in-person card payments.</p>
+        <p class="feature-desc">Ring up firewood, ice, and merch at the counter with Square Terminal and in-person card payments. Included on Ridgeline and Summit; a $49/mo add-on on Trailhead.</p>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🧾</div>
@@ -681,7 +685,7 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <div class="pricing-tier-icon">🏔️</div>
         <div class="pricing-tier-name">Tier 2</div>
         <div class="pricing-tier-label">Ridgeline</div>
-        <div><span class="pricing-amount">$229</span><span class="pricing-mo">/mo</span></div>
+        <div><span class="pricing-amount">$249</span><span class="pricing-mo">/mo</span></div>
         <hr class="pricing-divider" />
         <ul class="pricing-features">
           <li><span class="check">✓</span> Everything in Trailhead</li>
@@ -692,8 +696,9 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
           <li><span class="check">✓</span> Guest directory with automatic sync</li>
           <li><span class="check">✓</span> Live admin park map (staff site-status board)</li>
           <li><span class="check">✓</span> Early check-in &amp; late check-out upsells</li>
+          <li><span class="check">✓</span> Camp Store — ring up firewood, ice &amp; merch at the counter</li>
         </ul>
-        <div class="pricing-store-line">+ Camp Store available as an add-on (+$49/mo)</div>
+        <div class="pricing-store-line included"><span class="store-check">✓</span>Camp Store included</div>
         <a href="#contact" class="btn-pricing btn-pricing-outline">Get Started</a>
       </div>
       <div class="pricing-card reveal">

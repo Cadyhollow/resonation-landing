@@ -171,7 +171,9 @@
     .pricing-tier-icon { font-size: 1.8rem; margin-bottom: 8px; }
     .pricing-tier-name { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green-sage); margin-bottom: 4px; }
     .pricing-card.featured .pricing-tier-name { color: rgba(255,255,255,0.6); }
-    .pricing-tier-label { font-size: 1.4rem; font-weight: 800; color: var(--green-dark); letter-spacing: -0.02em; margin-bottom: 20px; }
+    .pricing-who { font-size: 0.85rem; font-weight: 600; color: var(--green-sage); line-height: 1.45; margin: 0 0 18px; }
+    .pricing-card.featured .pricing-who { color: rgba(255,255,255,0.72); }
+    .pricing-tier-label { font-size: 1.4rem; font-weight: 800; color: var(--green-dark); letter-spacing: -0.02em; margin-bottom: 8px; }
     .pricing-card.featured .pricing-tier-label { color: var(--white); }
     .pricing-amount { font-size: 2.8rem; font-weight: 800; color: var(--green-dark); letter-spacing: -0.04em; line-height: 1; }
     .pricing-card.featured .pricing-amount { color: var(--gold); }
@@ -180,6 +182,7 @@
     .pricing-divider { border: none; border-top: 1px solid rgba(110,131,111,0.15); margin: 24px 0; }
     .pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,0.1); }
     .pricing-features { list-style: none; margin-bottom: 32px; }
+    .pricing-features li .li-text { flex: 1; min-width: 0; }
     .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.875rem; color: var(--text-mid); padding: 6px 0; line-height: 1.4; }
     .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.75); }
     .check { color: var(--green-sage); font-weight: 700; flex-shrink: 0; }
@@ -468,7 +471,7 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
       <p>Your park's command center — bookings, payments, the camp store, seasonal campers, and e-signed documents, all in one beautiful place. Less busywork, warmer guest relationships, more time around the fire.</p>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">Book a Free Demo</a>
-        <a href="https://lakeshore-camp-reservations.vercel.app/" target="_blank" class="btn-secondary">See It Live →</a>
+        <a href="https://yellow-rock-demo.vercel.app/" target="_blank" class="btn-secondary">See It Live →</a>
       </div>
     </div>
     <div class="hero-scroll"><span>Scroll</span><div class="scroll-arrow"></div></div>
@@ -531,8 +534,8 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
       <div class="feature-card highlight reveal">
         <div class="feature-badge">Ridgeline &amp; Summit</div>
         <div class="feature-icon">🗺️</div>
-        <div class="feature-title">Interactive Site Map</div>
-        <p class="feature-desc">Let guests click the exact site they want on a color-coded, real-time map.</p>
+        <div class="feature-title">An Illustrated Map of Your Park</div>
+        <p class="feature-desc">We draw your park by hand — roads, trees, the pond, every site in its real place. Guests see it color-coded and live, and pick the exact site they want.</p>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">✍️</div>
@@ -544,6 +547,16 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <div class="feature-title">Your Brand, Your Look</div>
         <p class="feature-desc">Custom colors and logo make your booking page feel like a natural extension of your park.</p>
       </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🐾</div>
+        <div class="feature-title">Pets, Handled Properly</div>
+        <p class="feature-desc">Per-pet fees, pet-friendly sites, and service animals that are never charged — set once, applied every time.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🏷️</div>
+        <div class="feature-title">Seasons, Rates &amp; Blocked Dates</div>
+        <p class="feature-desc">Nightly rates by season, minimum stays for holiday weekends, and dates blocked off when a site isn&rsquo;t available.</p>
+      </div>
     </div>
     <div class="feature-group-header reveal">
       <div class="feature-group-label">⚙️ Run Your Operation</div>
@@ -553,9 +566,10 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
       <div class="feature-card reveal">
         <div class="feature-icon">📋</div>
         <div class="feature-title">Command Center</div>
-        <p class="feature-desc">Manual booking, admin calendar, site management, and settings — from anywhere, by you or your staff.</p>
+        <p class="feature-desc">Manual booking, admin calendar, site management, and settings — from anywhere. Staff logins come with owner, manager, and front-desk roles, so people see only what they should.</p>
       </div>
-      <div class="feature-card reveal">
+      <div class="feature-card highlight reveal">
+        <div class="feature-badge">Ridgeline &amp; Summit</div>
         <div class="feature-icon">🗺️</div>
         <div class="feature-title">Live Admin Park Map</div>
         <p class="feature-desc">A color-coded, real-time site-status board so your team always knows which sites are open, occupied, or turning over.</p>
@@ -563,12 +577,25 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
       <div class="feature-card reveal">
         <div class="feature-icon">📇</div>
         <div class="feature-title">Guest Directory</div>
-        <p class="feature-desc">A searchable guest database that syncs automatically as reservations come in.</p>
+        <p class="feature-desc">A searchable guest database that fills itself as reservations come in. No list to keep, no exports to juggle.</p>
       </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">⏰</div>
-        <div class="feature-title">Early &amp; Late Upsells</div>
-        <p class="feature-desc">Sell early check-in and late check-out as paid upgrades — automatic extra revenue per booking.</p>
+      <div class="feature-card highlight reveal">
+        <div class="feature-badge">Ridgeline &amp; Summit</div>
+        <div class="feature-icon">✉️</div>
+        <div class="feature-title">Email Your Guests in One Place</div>
+        <p class="feature-desc">Everyone staying tonight. Everyone who ever stayed. Your seasonals, your monthlies, or any range of dates — combine groups and duplicate addresses merge themselves. Search, tick and untick anyone before it goes.</p>
+      </div>
+      <div class="feature-card highlight reveal">
+        <div class="feature-badge">Ridgeline &amp; Summit</div>
+        <div class="feature-icon">✅</div>
+        <div class="feature-title">Shared To-Do List</div>
+        <p class="feature-desc">The mowing, the pump, the picnic table on site 42. Priorities, owners, and jobs that repeat on their own schedule.</p>
+      </div>
+      <div class="feature-card highlight reveal">
+        <div class="feature-badge">Ridgeline &amp; Summit</div>
+        <div class="feature-icon">📦</div>
+        <div class="feature-title">We Move Your Records In</div>
+        <p class="feature-desc">Guests, sites, and history from whatever you use now — imported for you, so you start with your park already in it.</p>
       </div>
     </div>
     <div class="feature-group-header reveal">
@@ -594,15 +621,21 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
       </div>
       <div class="feature-card highlight reveal">
         <div class="feature-badge">Summit</div>
-        <div class="feature-icon">⚡</div>
-        <div class="feature-title">Electric Meter Billing</div>
-        <p class="feature-desc">Record kWh readings and send automated electric statements to seasonal campers.</p>
+        <div class="feature-icon">📄</div>
+        <div class="feature-title">Seasonal Contracts, Signed Online</div>
+        <p class="feature-desc">Send a contract by email and have it signed the same day. One contract can cover more than one site, and if terms change you can replace it while keeping the original on record.</p>
       </div>
       <div class="feature-card highlight reveal">
         <div class="feature-badge">Summit</div>
-        <div class="feature-icon">💰</div>
-        <div class="feature-title">Credit Balance Tracking</div>
-        <p class="feature-desc">Track seasonal camper credits and prepayments, applied automatically to their folio.</p>
+        <div class="feature-icon">🧮</div>
+        <div class="feature-title">Monthly Bills Assembled For You</div>
+        <p class="feature-desc">Site fee, electric, and everyday charges gathered into one bill, starting from last month&rsquo;s balance. Credits and prepayments apply themselves, and your campers pay from a link in their email.</p>
+      </div>
+      <div class="feature-card highlight reveal">
+        <div class="feature-badge">Summit</div>
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Electric Meter Billing</div>
+        <p class="feature-desc">Walk the route, tap the number, next — read your meters from your phone. Each camper is billed by the kilowatt-hour, on statements you send on your own schedule.</p>
       </div>
     </div>
     <div class="feature-group-header reveal">
@@ -616,6 +649,12 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <div class="feature-title">Reporting &amp; Analytics</div>
         <p class="feature-desc">Occupancy trends, revenue snapshots, and booking data at a glance.</p>
       </div>
+      <div class="feature-card highlight reveal">
+        <div class="feature-badge">Ridgeline &amp; Summit</div>
+        <div class="feature-icon">⏰</div>
+        <div class="feature-title">Early &amp; Late Upsells</div>
+        <p class="feature-desc">Sell early check-in and late check-out as paid upgrades — automatic extra revenue per booking.</p>
+      </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🔥</div>
         <div class="feature-title">Add-ons &amp; Extras</div>
@@ -627,15 +666,14 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <p class="feature-desc">Run promotions and reward repeat guests with custom discount codes.</p>
       </div>
       <div class="feature-card reveal">
-        <div class="feature-icon">📋</div>
+        <div class="feature-icon">📜</div>
         <div class="feature-title">Cancellation Policies</div>
         <p class="feature-desc">Set configurable cancellation and refund rules that fit how your park operates.</p>
       </div>
-      <div class="feature-card highlight reveal">
-        <div class="feature-badge">Summit — Coming Soon</div>
-        <div class="feature-icon">🤖</div>
-        <div class="feature-title">AI-Powered Features</div>
-        <p class="feature-desc">Intelligent tools to help you communicate better and fill sites faster.</p>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🧷</div>
+        <div class="feature-title">Sales Tax &amp; Refunds</div>
+        <p class="feature-desc">Sales tax set up your way and recorded on every transaction. Refunds go back the way they came, with a full audit trail.</p>
       </div>
     </div>
   </section>
@@ -645,7 +683,7 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
     <div class="reveal">
       <h2>Want to see it in action?</h2>
       <p>Click through a live ResoNation booking site — exactly what your guests would experience.</p>
-      <a href="https://lakeshore-camp-reservations.vercel.app/" target="_blank" class="btn-primary">View Live Demo →</a>
+      <a href="https://yellow-rock-demo.vercel.app/" target="_blank" class="btn-primary">View Live Demo →</a>
     </div>
   </div>
 
@@ -661,21 +699,26 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <div class="pricing-tier-icon">🥾</div>
         <div class="pricing-tier-name">Tier 1</div>
         <div class="pricing-tier-label">Trailhead</div>
+        <div class="pricing-who">For a park that takes bookings and payments.</div>
         <div><span class="pricing-amount">$99</span><span class="pricing-mo">/mo</span></div>
         <hr class="pricing-divider" />
         <ul class="pricing-features">
-          <li><span class="check">✓</span> Online booking & availability calendar</li>
-          <li><span class="check">✓</span> Square payment processing</li>
-          <li><span class="check">✓</span> Guest confirmation emails</li>
-          <li><span class="check">✓</span> Staff notification emails</li>
-          <li><span class="check">✓</span> Manual booking for phone reservations</li>
-          <li><span class="check">✓</span> Digital liability waiver</li>
-          <li><span class="check">✓</span> Admin dashboard & settings</li>
-          <li><span class="check">✓</span> Mobile-friendly on all devices</li>
-          <li><span class="check">✓</span> Custom logo & brand colors on your booking page</li>
-          <li><span class="check">✓</span> Add-ons & extras (firewood, ice, rentals)</li>
-          <li><span class="check">✓</span> Discount codes</li>
-          <li><span class="check">✓</span> Configurable cancellation policies</li>
+          <li><span class="check">✓</span><span class="li-text">Online booking &amp; availability calendar</span></li>
+          <li><span class="check">✓</span><span class="li-text">Square payment processing &mdash; funds go straight to your account</span></li>
+          <li><span class="check">✓</span><span class="li-text">Digital liability waiver, signed at checkout</span></li>
+          <li><span class="check">✓</span><span class="li-text">Manual booking for phone calls and walk-ups</span></li>
+          <li><span class="check">✓</span><span class="li-text">Guest confirmation emails &amp; staff notifications</span></li>
+          <li><span class="check">✓</span><span class="li-text">Guest folios &mdash; a running account for every guest</span></li>
+          <li><span class="check">✓</span><span class="li-text">Sales tax set up your way, recorded on every transaction</span></li>
+          <li><span class="check">✓</span><span class="li-text">Refunds, with a full audit trail</span></li>
+          <li><span class="check">✓</span><span class="li-text">Pets &mdash; per-pet fees, pet-friendly sites, service animals</span></li>
+          <li><span class="check">✓</span><span class="li-text">Add-ons &amp; extras (firewood, ice, rentals)</span></li>
+          <li><span class="check">✓</span><span class="li-text">Discount codes</span></li>
+          <li><span class="check">✓</span><span class="li-text">Cancellation &amp; refund policies you set</span></li>
+          <li><span class="check">✓</span><span class="li-text">Seasons, nightly rates, minimum stays &amp; blocked dates</span></li>
+          <li><span class="check">✓</span><span class="li-text">Staff logins with owner, manager &amp; front-desk roles</span></li>
+          <li><span class="check">✓</span><span class="li-text">Your logo &amp; brand colors on your booking page</span></li>
+          <li><span class="check">✓</span><span class="li-text">Works on every phone, tablet and computer</span></li>
         </ul>
         <div class="pricing-store-line">+ Camp Store available as an add-on (+$49/mo)</div>
         <a href="#contact" class="btn-pricing btn-pricing-outline">Get Started</a>
@@ -685,18 +728,23 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <div class="pricing-tier-icon">🏔️</div>
         <div class="pricing-tier-name">Tier 2</div>
         <div class="pricing-tier-label">Ridgeline</div>
+        <div class="pricing-who">For a park with a front desk and a store.</div>
         <div><span class="pricing-amount">$249</span><span class="pricing-mo">/mo</span></div>
         <hr class="pricing-divider" />
         <ul class="pricing-features">
-          <li><span class="check">✓</span> Everything in Trailhead</li>
-          <li><span class="check">✓</span> Interactive clickable site map</li>
-          <li><span class="check">✓</span> Color-coded real-time availability</li>
-          <li><span class="check">✓</span> Guests self-select their site</li>
-          <li><span class="check">✓</span> Reporting & analytics dashboard</li>
-          <li><span class="check">✓</span> Guest directory with automatic sync</li>
-          <li><span class="check">✓</span> Live admin park map (staff site-status board)</li>
-          <li><span class="check">✓</span> Early check-in &amp; late check-out upsells</li>
-          <li><span class="check">✓</span> Camp Store — ring up firewood, ice &amp; merch at the counter</li>
+          <li><span class="check">✓</span><span class="li-text"><strong>Everything in Trailhead</strong></span></li>
+          <li><span class="check">✓</span><span class="li-text"><strong>An illustrated map of your park, drawn for you</strong></span></li>
+          <li><span class="check">✓</span><span class="li-text">Guests pick their own site, right on the map</span></li>
+          <li><span class="check">✓</span><span class="li-text">Live admin map &mdash; open, occupied, or turning over today</span></li>
+          <li><span class="check">✓</span><span class="li-text"><strong>Camp Store included</strong> &mdash; firewood, ice and merch at the counter</span></li>
+          <li><span class="check">✓</span><span class="li-text">Barcode scanning &amp; Square Terminal for in-person cards</span></li>
+          <li><span class="check">✓</span><span class="li-text">Receipts printed or emailed</span></li>
+          <li><span class="check">✓</span><span class="li-text">Guest directory that fills itself as reservations come in</span></li>
+          <li><span class="check">✓</span><span class="li-text"><strong>Email your guests straight from that directory</strong> &mdash; everyone staying tonight, everyone who ever stayed, or any range of dates. Combine groups, and duplicate addresses merge themselves.</span></li>
+          <li><span class="check">✓</span><span class="li-text">Early check-in &amp; late check-out upsells</span></li>
+          <li><span class="check">✓</span><span class="li-text">Reporting &mdash; occupancy, revenue, where bookings come from</span></li>
+          <li><span class="check">✓</span><span class="li-text">Shared to-do list for your staff</span></li>
+          <li><span class="check">✓</span><span class="li-text">Data import &mdash; we move your existing records in for you</span></li>
         </ul>
         <div class="pricing-store-line included"><span class="store-check">✓</span>Camp Store included</div>
         <a href="#contact" class="btn-pricing btn-pricing-outline">Get Started</a>
@@ -705,17 +753,23 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <div class="pricing-tier-icon">⛰️</div>
         <div class="pricing-tier-name">Tier 3</div>
         <div class="pricing-tier-label">Summit</div>
+        <div class="pricing-who">For a park with seasonal and monthly campers.</div>
         <div><span class="pricing-amount">$449</span><span class="pricing-mo">/mo</span></div>
         <hr class="pricing-divider" />
         <ul class="pricing-features">
-          <li><span class="check">✓</span> Everything in Ridgeline</li>
-          <li><span class="check">✓</span> Custom branded email templates</li>
-          <li><span class="check">✓</span> AI-powered features <em style="font-size:0.78rem;color:var(--green-sage)">(coming soon)</em></li>
-          <li><span class="check">✓</span> Priority support</li>
-          <li><span class="check">✓</span> Seasonal &amp; monthly camper management</li>
-          <li><span class="check">✓</span> Seasonal guest accounts &amp; folios</li>
-          <li><span class="check">✓</span> Electric meter billing (kWh statements)</li>
-          <li><span class="check">✓</span> Credit balance tracking</li>
+          <li><span class="check">✓</span><span class="li-text"><strong>Everything in Ridgeline</strong></span></li>
+          <li><span class="check">✓</span><span class="li-text"><strong>Seasonal contracts sent and signed online</strong> &mdash; no paper, no chasing</span></li>
+          <li><span class="check">✓</span><span class="li-text">One contract can cover more than one site</span></li>
+          <li><span class="check">✓</span><span class="li-text">Replace a signed contract when terms change &mdash; the original is kept</span></li>
+          <li><span class="check">✓</span><span class="li-text"><strong>Seasonal &amp; monthly accounts</strong> with a running balance</span></li>
+          <li><span class="check">✓</span><span class="li-text"><strong>Monthly bills assembled for you</strong> &mdash; site fee, electric, everyday charges, due dates, and who is late</span></li>
+          <li><span class="check">✓</span><span class="li-text">Statements that start from last month&rsquo;s balance</span></li>
+          <li><span class="check">✓</span><span class="li-text">Credit balances &amp; prepayments applied automatically</span></li>
+          <li><span class="check">✓</span><span class="li-text">Campers see their bill and pay it online from an emailed link</span></li>
+          <li><span class="check">✓</span><span class="li-text"><strong>Electric billed by the kilowatt-hour</strong>, per camper</span></li>
+          <li><span class="check">✓</span><span class="li-text"><strong>Read your meters from your phone</strong> &mdash; walk the route, tap the number, next</span></li>
+          <li><span class="check">✓</span><span class="li-text">Email all your seasonals or all your monthlies in one go</span></li>
+          <li><span class="check">✓</span><span class="li-text">Priority support</span></li>
         </ul>
         <div class="pricing-store-line included"><span class="store-check">✓</span>Camp Store included</div>
         <a href="#contact" class="btn-pricing btn-pricing-outline">Get Started</a>

@@ -140,9 +140,15 @@
     .shot-phone { flex: 0 0 240px; }
     .shot-phone img { border-radius: 26px; border: 9px solid #0d1f16; box-shadow: 0 18px 44px rgba(0,0,0,0.38); }
     .shot-narrow { max-width: 520px; margin: 0 auto; }
+    .showcase.compact { display: flex; gap: 44px; align-items: center; }
+    .showcase.compact .showcase-head { text-align: left; margin: 0; flex: 0 0 310px; max-width: 310px; }
+    .showcase.compact .showcase-head h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
+    .showcase.compact .shots { flex: 1; min-width: 0; }
     @media (max-width: 860px) {
       .showcase { padding: 38px 18px 32px; margin: 56px auto; border-radius: 20px; }
       .shots { flex-direction: column; gap: 26px; }
+      .showcase.compact { flex-direction: column; gap: 26px; }
+      .showcase.compact .showcase-head { flex: none; max-width: none; text-align: center; }
       .shot-phone { flex: none; max-width: 250px; margin: 0 auto; }
     }
     .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
@@ -648,6 +654,18 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <figure class="shot">
           <img src="img/cal-month.webp" width="1800" height="1201" loading="lazy" decoding="async" alt="The whole month at once" />
           <figcaption>The whole month at once</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="showcase compact reveal">
+      <div class="showcase-head">
+        <div class="showcase-eyebrow">Email &middot; Ridgeline &amp; Summit</div>
+        <h3>Everyone staying tonight. Or everyone, ever.</h3>
+        <p>Tap to pick who it goes to &mdash; your seasonals, your monthlies, whoever is on site tonight, anyone who ever stayed, or a range of dates. Combine them and duplicate addresses merge themselves. Then tick and untick anyone before it goes.</p>
+      </div>
+      <div class="shots">
+        <figure class="shot">
+          <img src="img/send-email.webp" width="1200" height="949" loading="lazy" decoding="async" alt="The Send Email page: choosing who the email goes to" />
         </figure>
       </div>
     </section>

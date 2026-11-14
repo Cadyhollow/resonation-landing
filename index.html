@@ -126,6 +126,25 @@
     /* FEATURES */
     .features-section { background: white; padding: 100px 5%; }
     .features-header { max-width: 1200px; margin: 0 auto 64px; }
+    .showcase { max-width: 1200px; margin: 84px auto; background: var(--green-dark); border-radius: 28px; padding: 52px 44px 46px; }
+    .showcase-head { text-align: center; max-width: 700px; margin: 0 auto 36px; }
+    .showcase-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .showcase-head h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; color: var(--white); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 14px; }
+    .showcase-head p { font-size: 1rem; color: rgba(255,255,255,0.72); line-height: 1.65; }
+    .shots { display: flex; gap: 22px; align-items: stretch; }
+    .shots.middle { align-items: center; }
+    .shots.stack { flex-direction: column; gap: 30px; }
+    .shot { flex: 1; min-width: 0; margin: 0; display: flex; flex-direction: column; }
+    .shot img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 18px 44px rgba(0,0,0,0.30); background: #fff; }
+    .shot figcaption { margin-top: auto; padding-top: 14px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.03em; color: rgba(255,255,255,0.58); text-align: center; }
+    .shot-phone { flex: 0 0 240px; }
+    .shot-phone img { border-radius: 26px; border: 9px solid #0d1f16; box-shadow: 0 18px 44px rgba(0,0,0,0.38); }
+    .shot-narrow { max-width: 520px; margin: 0 auto; }
+    @media (max-width: 860px) {
+      .showcase { padding: 38px 18px 32px; margin: 56px auto; border-radius: 20px; }
+      .shots { flex-direction: column; gap: 26px; }
+      .shot-phone { flex: none; max-width: 250px; margin: 0 auto; }
+    }
     .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
     .feature-card { background: var(--cream); border-radius: 16px; padding: 36px 32px; border: 1px solid rgba(110,131,111,0.15); transition: transform 0.2s, box-shadow 0.2s; }
     .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(20,50,37,0.1); }
@@ -558,6 +577,23 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <p class="feature-desc">Nightly rates by season, minimum stays for holiday weekends, and dates blocked off when a site isn&rsquo;t available.</p>
       </div>
     </div>
+    <section class="showcase reveal">
+      <div class="showcase-head">
+        <div class="showcase-eyebrow">The map</div>
+        <h3>What your guests see. What you see.</h3>
+        <p>The same park, from both sides of the counter. Your guests pick a site on a map drawn for your park &mdash; you open the day on one screen and know where it stands.</p>
+      </div>
+      <div class="shots">
+        <figure class="shot">
+          <img src="img/map.webp" width="1200" height="943" loading="lazy" decoding="async" alt="Your booking page" />
+          <figcaption>Your booking page</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/dashboard.webp" width="1200" height="897" loading="lazy" decoding="async" alt="Your dashboard" />
+          <figcaption>Your dashboard</figcaption>
+        </figure>
+      </div>
+    </section>
     <div class="feature-group-header reveal">
       <div class="feature-group-label">⚙️ Run Your Operation</div>
       <div class="feature-group-sub">Tasks that used to need a staffer — now automatic.</div>
@@ -598,6 +634,23 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <p class="feature-desc">Guests, sites, and history from whatever you use now — imported for you, so you start with your park already in it.</p>
       </div>
     </div>
+    <section class="showcase reveal">
+      <div class="showcase-head">
+        <div class="showcase-eyebrow">The calendar</div>
+        <h3>Two ways to look at your season.</h3>
+        <p>Slide across the weeks to see who is where and what frees up when, or take a whole month at a glance. Same reservations, whichever way you think.</p>
+      </div>
+      <div class="shots stack">
+        <figure class="shot">
+          <img src="img/cal-timeline.webp" width="1800" height="1170" loading="lazy" decoding="async" alt="Slide across the season" />
+          <figcaption>Slide across the season</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/cal-month.webp" width="1800" height="1201" loading="lazy" decoding="async" alt="The whole month at once" />
+          <figcaption>The whole month at once</figcaption>
+        </figure>
+      </div>
+    </section>
     <div class="feature-group-header reveal">
       <div class="feature-group-label">💳 Get Paid — Every Way</div>
       <div class="feature-group-sub">Bookings, walk-ups, seasonals, and utilities — all in one place.</div>
@@ -638,6 +691,23 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <p class="feature-desc">Walk the route, tap the number, next — read your meters from your phone. Each camper is billed by the kilowatt-hour, on statements you send on your own schedule.</p>
       </div>
     </div>
+    <section class="showcase reveal">
+      <div class="showcase-head">
+        <div class="showcase-eyebrow">Electric &middot; Summit</div>
+        <h3>Electric, billed by the kilowatt-hour.</h3>
+        <p>Walk the route and tap the number into your phone &mdash; the usage and the charge work themselves out as you type. Back at the office, the month is already assembled and waiting for your word.</p>
+      </div>
+      <div class="shots middle">
+        <figure class="shot">
+          <img src="img/electric.webp" width="1500" height="851" loading="lazy" decoding="async" alt="The month, assembled" />
+          <figcaption>The month, assembled</figcaption>
+        </figure>
+        <figure class="shot shot-phone">
+          <img src="img/meter-phone.webp" width="640" height="1070" loading="lazy" decoding="async" alt="Reading meters on the walk" />
+          <figcaption>Reading meters on the walk</figcaption>
+        </figure>
+      </div>
+    </section>
     <div class="feature-group-header reveal">
       <div class="feature-group-label">📈 Grow &amp; Optimize</div>
       <div class="feature-group-sub">The numbers and tools to run your park smarter.</div>
@@ -676,6 +746,23 @@ c0 15 -9 28 -24 35 -13 5 -41 32 -62 59 -22 26 -45 54 -51 61 -7 7 -34 41 -60
         <p class="feature-desc">Sales tax set up your way and recorded on every transaction. Refunds go back the way they came, with a full audit trail.</p>
       </div>
     </div>
+    <section class="showcase reveal">
+      <div class="showcase-head">
+        <div class="showcase-eyebrow">Long-term campers &middot; Summit</div>
+        <h3>A front desk for your seasonals.</h3>
+        <p>Contracts, electric, meter walks, records and billing in one place &mdash; and a statement your campers can read without having to call you.</p>
+      </div>
+      <div class="shots stack">
+        <figure class="shot">
+          <img src="img/longterm.webp" width="1764" height="470" loading="lazy" decoding="async" alt="Your seasonal and monthly campers, in one place" />
+          <figcaption>Your seasonal and monthly campers, in one place</figcaption>
+        </figure>
+        <figure class="shot shot-narrow">
+          <img src="img/statement.webp" width="1040" height="1062" loading="lazy" decoding="async" alt="What the camper receives" />
+          <figcaption>What the camper receives</figcaption>
+        </figure>
+      </div>
+    </section>
   </section>
 
   <!-- DEMO BANNER -->

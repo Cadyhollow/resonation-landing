@@ -2,6 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     { "source": "/learn", "destination": "/api/learn" },
+    { "source": "/learn/handbook", "destination": "/api/learn?doc=handbook" },
     { "source": "/learn/:path*", "destination": "/api/learn" }
   ]
 }

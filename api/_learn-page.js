@@ -23,8 +23,8 @@
 // TODO(phone): replace with the real ResoNation support number. Both lines must
 // change together — PHONE_DISPLAY is what a client reads, PHONE_TEL is what their
 // phone dials (E.164: a leading + and country code, digits only).
-const PHONE_DISPLAY = '(555) 123-4567';
-const PHONE_TEL = '+15551234567';
+const PHONE_DISPLAY = '(970) 629-2788';
+const PHONE_TEL = '+19706292788';
 
 const EMAIL = 'resonationsystems@gmail.com';
 
@@ -348,6 +348,10 @@ function renderApp() {
     <section class="sec">
       <div class="sec-head"><span class="kick">Handouts</span><h2>Guides to keep</h2></div>
       <div class="docs">
+        <a class="doc" href="/learn/handbook">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h12a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2z"/><path d="M8 8h7M8 12h7M8 16h4"/></svg></span>
+          <span><b>The Owner Handbook</b><small>Everything, in the order that makes setup easiest</small></span>
+        </a>
         <a class="doc" href="${HANDOUT_BOOKING_URL}">
           <span class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/></svg></span>
           <span><b>Connect your booking page</b><small>Add a “Book Now” button to your site</small></span>

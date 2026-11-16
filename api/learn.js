@@ -11,9 +11,15 @@
  * it.
  *
  * The flow:
- *   GET  /learn  ->  valid cookie?  yes: the Learning Center.  no: the sign-in card.
- *   POST /learn  ->  code matches?  yes: set the cookie, redirect back to GET.
- *                                    no: the sign-in card again, with the error shown.
+ *   GET  /learn           ->  valid cookie?  yes: the Learning Center.  no: the sign-in card.
+ *   GET  /learn/handbook  ->  valid cookie?  yes: the Owner Handbook.    no: the sign-in card.
+ *   POST /learn           ->  code matches?  yes: set the cookie, redirect back to GET.
+ *                                             no: the sign-in card again, with the error shown.
+ *
+ * Every page under /learn is rendered by this one function, so there is exactly
+ * one place the gate can be got wrong. Adding a document means adding a rewrite
+ * in vercel.json, a case in whichDoc() and a branch at the bottom — never a new
+ * .html file, because a plain .html file in this repo is public.
  *
  * Environment variables (set these in Vercel -> Project -> Settings -> Environment
  * Variables, for Production and Preview):
@@ -28,6 +34,7 @@
 
 const crypto = require('crypto');
 const page = require('./_learn-page.js');
+const handbook = require('./_handbook-page.js');
 
 const COOKIE_NAME = 'reso_learn';
 const COOKIE_VERSION = 'v1';
@@ -153,6 +160,26 @@ function setHeaders(res) {
   res.setHeader('X-Content-Type-Options', 'nosniff');
 }
 
+/*
+ * Which document is being asked for. vercel.json rewrites /learn/handbook to
+ * /api/learn?doc=handbook, so the query is the answer in production. The path is
+ * read as well, because a local `vercel dev` or a future change to how rewrites
+ * present req.url should not quietly turn the handbook into a 404.
+ *
+ * Anything unrecognised under /learn comes back as the Learning Center rather
+ * than a 404 — a mistyped URL from someone who has the code should land them
+ * somewhere useful.
+ */
+function whichDoc(req) {
+  const fromQuery = req.query && typeof req.query.doc === 'string' ? req.query.doc : '';
+  if (fromQuery) return fromQuery.toLowerCase();
+
+  const raw = String(req.url || '');
+  const path = raw.split('?')[0].replace(/\/+$/, '');
+  const match = /\/learn\/([^/]+)$/.exec(path);
+  return match ? decodeURIComponent(match[1]).toLowerCase() : '';
+}
+
 function send(req, res, status, html) {
   res.statusCode = status;
   if ((req.method || '').toUpperCase() === 'HEAD') return res.end();
@@ -203,6 +230,8 @@ module.exports = async function handler(req, res) {
     return send(req, res, 503, page.renderGate({ error: NOT_CONFIGURED }));
   }
 
-  if (hasValidSession(req)) return send(req, res, 200, page.renderApp());
-  return send(req, res, 200, page.renderGate({ error: '' }));
+  if (!hasValidSession(req)) return send(req, res, 200, page.renderGate({ error: '' }));
+
+  if (whichDoc(req) === 'handbook') return send(req, res, 200, handbook.renderHandbook());
+  return send(req, res, 200, page.renderApp());
 };
